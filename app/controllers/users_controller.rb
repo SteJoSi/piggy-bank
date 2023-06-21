@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+    before_action :authorize, except: [:create, :index]
 
     # Get '/users'
     def index 
