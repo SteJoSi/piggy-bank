@@ -42,4 +42,37 @@ class ExpensesController < ApplicationController
         end
     end
 
+    # Delete /expenses/:id
+    def destroy
+        expense = Expenses.find_by(id: session[:user_id])
+        if authorized_user?(expense.user)
+            expense.destroy
+            render json: expense, status: 200
+        else
+            render json: { error: "Unauthorized to delete expense" }, status: :unauthorized
+        end
+    end
+
+    private
+
+    def expense_params
+        params.permit(:name, :price)
+    end
+
+    def update_expense_params
+        params.permit(:name, :price)
+    end
+
+    def authorize 
+        render json: { error: "Not authorized" }, status: :unauthorized unless session.include?(:user_id)
+    end
+
+    def authorized_user?(user)
+        user && user.id == session[:user_id]
+    end
+
+    def render_not_found_response
+        render json: { error: "Record not found" }, status: :not_found
+    end
+
 end
