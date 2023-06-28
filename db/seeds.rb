@@ -13,6 +13,13 @@ User.destroy_all
 Expense.destroy_all
 Category.destroy_all
 
+# create users - Username, password
+# create categories/budget - Food, Transportation, Utilities, Savings, Rent, Coffee, Shopping
+# create expenses - Name, price
 
 
 puts "✅ Done seeding!"
+
+p "Created #{User.count} users"
+p "Created #{Category.count} categories"
+p "Created #{Expenses.count} expenses"
