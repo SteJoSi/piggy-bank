@@ -18,7 +18,13 @@ u1 = User.create(username: Faker::Internet.username(specifier: 8), password: "No
 u2 = User.create(username: Faker::Internet.username(specifier: 8), password: "December12")
 u3 = User.create(username: Faker::Internet.username(specifier: 8), password: "January01")
 # create categories/budget - Food, Transportation, Utilities, Savings, Rent, Coffee, Shopping
-
+c1 = Category.create(name: "Groceries", budget: "$200")
+c2 = Category.create(name: "Transportation", budget: "$150")
+c3 = Category.create(name: "Utilities", budget: "$150")
+c4 = Category.create(name: "Rent", budget: "$900")
+c5 = Category.create(name: "Shopping", budget: "$250")
+c6 = Category.create(name: "Takeout", budget: "$100")
+c7 = Category.create(name: "Micellanous", budget: "$100")
 # create expenses - Name, price
 
 
