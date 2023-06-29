@@ -14,7 +14,11 @@ Expense.destroy_all
 Category.destroy_all
 
 # create users - Username, password
+u1 = User.create(username: Faker::Internet.username(specifier: 8), password: "November11")
+u2 = User.create(username: Faker::Internet.username(specifier: 8), password: "December12")
+u3 = User.create(username: Faker::Internet.username(specifier: 8), password: "January01")
 # create categories/budget - Food, Transportation, Utilities, Savings, Rent, Coffee, Shopping
+
 # create expenses - Name, price
 
 
